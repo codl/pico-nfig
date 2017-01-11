@@ -1,0 +1,30 @@
+.nfig-panel {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-family: Verdana, sans-serif;
+    font-size: 9pt;
+    padding: 6px;
+    margin: 1px;
+    transform: translatey(100%);
+}
+
+.nfig-panel.shown {
+    transform: translatey(0);
+    transition: transform 300ms;
+}
+
+.nfig-panel svg path {
+    fill: white;
+}
+
+.nfig-container {
+    /*width: 512px;
+    height: 512px;
+    z-index: 10;*/
+    overflow: hidden;
+    position: relative;
+}

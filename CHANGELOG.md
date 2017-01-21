@@ -1,3 +1,7 @@
+## v0.0.4
+
+* fix: race condition leads to keyboard being grabbed by both pico-8 and nfig
+
 ## v0.0.3
 
 * fix: not loading in firefox (dataset thing)

@@ -134,7 +134,9 @@ function nfig(){
 
     const svg_buttons = Array.from(panel_el.querySelectorAll("svg g"));
     for(let button of svg_buttons){
-        let which = button.dataset.nfigBtn;
+        // switch this back when firefox 51 comes out
+        //let which = button.dataset.nfigBtn;
+        let which = button.getAttribute("data-nfig-btn");
         button.addEventListener("click", e => {
             is_mapping = which;
             mapping_all = false;
@@ -155,7 +157,9 @@ function nfig(){
             }
         }
         for(let button of svg_buttons){
-            let which = button.dataset.nfigBtn;
+            // switch this back when firefox 51 comes out
+            //let which = button.dataset.nfigBtn;
+            let which = button.getAttribute("data-nfig-btn");
             button.classList.toggle("mapping", is_mapping && which == is_mapping)
             button.classList.toggle("pressed", pico8_buttons[player] & bitmap[which])
         }

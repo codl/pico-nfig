@@ -1,3 +1,8 @@
+## v0.0.3
+
+* fix: not loading in firefox (dataset thing)
+* fix: scrolling page when mapping keys that usually scroll the page
+
 ## v0.0.2
 
 * add: controller display now shows which buttons are currently pressed

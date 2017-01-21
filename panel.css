@@ -2,7 +2,7 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 250px;
+    width: 370px;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     font-family: Verdana, sans-serif;
@@ -10,6 +10,7 @@
     padding: 6px;
     margin: 1px;
     transform: translatey(100%);
+    text-align: left;
 }
 
 .nfig-panel.shown {
@@ -22,9 +23,25 @@
 }
 
 .nfig-container {
-    /*width: 512px;
-    height: 512px;
-    z-index: 10;*/
     overflow: hidden;
     position: relative;
+}
+
+#nfig-close {
+    display: inline-block;
+    float: right;
+}
+
+#nfig-controller {
+    max-width: 250px;
+    float: right;
+    clear: right;
+}
+
+#nfig-controller g.mapping path {
+    fill: orange;
+}
+
+.nfig-left {
+    margin: 1em;
 }

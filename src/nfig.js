@@ -147,6 +147,7 @@ function nfig(){
         for(let button of svg_buttons){
             let which = button.dataset.nfigBtn;
             button.classList.toggle("mapping", is_mapping && which == is_mapping)
+            button.classList.toggle("pressed", pico8_buttons[player] & bitmap[which])
         }
         cancel_el.style.display = is_mapping ? "inline" : "none";
         status_el.innerHTML = status;

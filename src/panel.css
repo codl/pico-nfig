@@ -42,6 +42,10 @@
     fill: orange;
 }
 
+#nfig-controller g.pressed path {
+    fill: pink;
+}
+
 .nfig-left {
     margin: 1em;
 }

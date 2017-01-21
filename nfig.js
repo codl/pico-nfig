@@ -108,7 +108,7 @@ function nfig(){
     }
     panel_contents += '</select>';
 
-    panel_contents += '<p id="nfig-status">Click any button to remap it.</p>';
+    panel_contents += '<p id="nfig-status"></p>';
 
     panel_contents += '<div id="nfig-actions"><button id="nfig-remapall">Remap all</button><button id="nfig-cancel">Cancel</button></div>';
 
@@ -174,6 +174,8 @@ function nfig(){
     const config_button = document.querySelectorAll(".pico8_el")[4];
     config_button.innerHTML = '<img src="icon.png" width="12" height="12"> Remap';
     config_button.addEventListener("click", toggle);
+
+    render();
 
     console.log("cool. let's play some video games");
 }

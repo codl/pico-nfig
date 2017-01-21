@@ -110,7 +110,7 @@ function nfig(){
 
     panel_contents += '<p id="nfig-status"></p>';
 
-    panel_contents += '<div id="nfig-actions"><button id="nfig-cancel">Cancel</button><button id="nfig-remapall">Remap all</button></div>';
+    panel_contents += '<div id="nfig-actions"><button id="nfig-cancel">Cancel</button> <button id="nfig-remapall">Remap all</button> <button id="nfig-reset">Restore defaults</button></div>';
 
     panel_contents += '</div>';
 
@@ -131,8 +131,9 @@ function nfig(){
         });
     }
 
+    let status_el = panel_el.querySelector("#nfig-status");
+
     function render(){
-        let status_el = panel_el.querySelector("#nfig-status");
         let cancel_el = panel_el.querySelector("#nfig-cancel");
         let status = "Click any button to remap it."
         if(is_mapping){
@@ -172,6 +173,12 @@ function nfig(){
         mapping_all = true;
         render();
     });
+
+    panel_el.querySelector("#nfig-reset").addEventListener("click", () => {
+        cancel();
+        bindings = Object.assign(bindings, default_bindings);
+        status_el.innerHTML = "Defaults restored."; // mmm gross
+    })
 
     const config_button = document.querySelectorAll(".pico8_el")[4];
     config_button.innerHTML = '<img src="icon.png" width="12" height="12"> Remap';

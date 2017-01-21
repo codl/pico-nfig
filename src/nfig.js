@@ -37,6 +37,15 @@ function nfig(){
      "a": [1, "x"]
     };
     let bindings = Object.assign({}, default_bindings);
+    try {
+        let saved = JSON.parse(localStorage.getItem("nfig-mappings"));
+        if(saved && typeof saved == "object") {
+            bindings = saved;
+            console.log("nfig successfully loaded saved mappings");
+        }
+    } catch (e) {
+        console.log(e);
+    }
     function key(e){
         if(e.key == "Enter" || e.key.toLowerCase() == "p"){
             return SDL.receiveEvent.call(this, e);
@@ -61,6 +70,7 @@ function nfig(){
             else {
                 is_mapping = null;
             }
+            localStorage.setItem("nfig-mappings", JSON.stringify(bindings));
             render();
         }
 

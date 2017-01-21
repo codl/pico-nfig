@@ -1,6 +1,6 @@
 ## v0.0.4
 
-* fix: race condition leads to keyboard being grabbed by both pico-8 and nfig
+* fix: race condition leads to keyboard being grabbed by both pico-8 and nfig (#2)
 
 ## v0.0.3
 

@@ -1,3 +1,6 @@
+// nfig - https://github.com/codl/pico-nfig
+// please don't look at my code it's bad
+
 let pico8_buttons = [0, 0, 0, 0, 0, 0, 0, 0]
 Module.doNotCaptureKeyboard = true;
 

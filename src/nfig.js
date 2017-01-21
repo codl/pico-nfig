@@ -159,6 +159,8 @@ function nfig(){
 
     function toggle(e){
         e.preventDefault();
+        // prevent focus from staying on the "Done" button
+        e.target.blur();
         cancel();
         panel_el.classList.toggle("shown");
     }

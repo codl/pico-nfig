@@ -1,6 +1,6 @@
 # nfig
 
-A drop-in script that adds control settings to your exported [PICO-8][] game
+A drop-in script that adds keyboard settings to your exported [PICO-8][] game
 
 ![](screenshot.png)
 
@@ -10,7 +10,7 @@ A drop-in script that adds control settings to your exported [PICO-8][] game
 
 Edit the HTML file for your game and add this line at the very end:
 
-```
+```javascript
 <script src="https://cdn.rawgit.com/codl/pico-nfig/v0.0.0/lib/nfig.js"></script>
 ```
 

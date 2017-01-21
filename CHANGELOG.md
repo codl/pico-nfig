@@ -1,4 +1,4 @@
-## master
+## v0.0.1
 
 * fix: panel reopening when pressing enter or space
 * add: a button to restore default bindings

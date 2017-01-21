@@ -11,7 +11,7 @@ A drop-in script that adds keyboard settings to your exported [PICO-8][] game
 Edit the HTML file for your game and add this line at the very end:
 
 ```javascript
-<script src="https://cdn.rawgit.com/codl/pico-nfig/v0.0.0/lib/nfig.js"></script>
+<script src="https://cdn.rawgit.com/codl/pico-nfig/v0.0.1/lib/nfig.js"></script>
 ```
 
 ## How do I use this without rawgit

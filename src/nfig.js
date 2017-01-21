@@ -110,7 +110,7 @@ function nfig(){
 
     panel_contents += '<p id="nfig-status"></p>';
 
-    panel_contents += '<div id="nfig-actions"><button id="nfig-remapall">Remap all</button><button id="nfig-cancel">Cancel</button></div>';
+    panel_contents += '<div id="nfig-actions"><button id="nfig-cancel">Cancel</button><button id="nfig-remapall">Remap all</button></div>';
 
     panel_contents += '</div>';
 

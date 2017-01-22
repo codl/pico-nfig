@@ -18,10 +18,6 @@
     transition: transform 300ms;
 }
 
-.nfig-panel svg path {
-    fill: white;
-}
-
 .nfig-container {
     overflow: hidden;
     position: relative;
@@ -36,6 +32,10 @@
     max-width: 250px;
     float: right;
     clear: right;
+}
+
+#nfig-controller g path {
+    fill: white;
 }
 
 #nfig-controller g.mapping path {

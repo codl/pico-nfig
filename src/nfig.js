@@ -114,7 +114,11 @@ function nfig(){
     main_section.replaceChild(container_el, canvas);
     container_el.appendChild(canvas);
 
-    main_section.removeChild(main_section.querySelector("br"));
+    // PICO-8 Styler compat. That br isn't there in Styler
+    let br = main_section.querySelector("br");
+    if(br){
+        main_section.removeChild(br);
+    }
 
     const panel_el = document.createElement("div");
     panel_el.classList.add("nfig-panel");

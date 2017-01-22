@@ -1,3 +1,8 @@
+## v0.0.6 (2017-01-22)
+
+- add: compatibility with krajzeg's pico8gamepad script. ([issue #1](https://github.com/codl/pico-nfig/issues/1))
+- add: *some* compat with pico-8 styler. ([issue #1](https://github.com/codl/pico-nfig/issues/1))
+
 ## v0.0.5
 
 * fix: arrow keys aren't mapped by default in Edge

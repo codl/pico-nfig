@@ -1,3 +1,7 @@
+## v0.0.5
+
+* fix: arrow keys aren't mapped by default in Edge
+
 ## v0.0.4
 
 * fix: race condition leads to keyboard being grabbed by both pico-8 and nfig ([issue #2](https://github.com/codl/pico-nfig/issues/2))

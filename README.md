@@ -23,3 +23,13 @@ Download [nfig.js](lib/nfig.js), put it in the same directory as your game, and 
 ```javascript
 <script src="nfig.js"></script>
 ```
+
+## Compatibility
+
+nfig supports and has been tested against exports from PICO-8 v0.1.10C, in evergreen browsers (Chrome, Firefox, Edge)
+
+It is compatible with [krajzeg's PICO-8 gamepad script][gamepad] and [PICO-8 Styler][styler] (without gamepad support, see [#1][])
+
+[gamepad]: https://github.com/krajzeg/pico8gamepad/
+[styler]: https://seansleblanc.itch.io/pico-8-styler
+[#1]: https://github.com/codl/pico-nfig/issues/1

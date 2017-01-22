@@ -211,6 +211,35 @@ function nfig(){
     config_button.innerHTML = '<img src="icon.png" width="12" height="12"> Remap';
     config_button.addEventListener("click", toggle);
 
+    if(navigator.getGamepads && window.updateGamepads){
+
+        // wrapper for https://github.com/krajzeg/pico8gamepad/
+        let oldUpdateGamepads = updateGamepads;
+        let ugp_buttons = [0,0,0,0,0,0,0,0];
+        function newUpdateGamepads(t){
+            let buffer = pico8_buttons;
+            let ugp_buttons_before = ugp_buttons.slice();
+
+            pico8_buttons = ugp_buttons;
+            oldUpdateGamepads(t);
+            pico8_buttons = buffer;
+
+            let must_render = false;
+
+            for(let i = 0; i < ugp_buttons.length; i++){
+                if(ugp_buttons_before[i] != ugp_buttons[i]){
+                    pico8_buttons[i] = ugp_buttons[i];
+                    must_render = true;
+                }
+            }
+
+            if(must_render){
+                render();
+            }
+        }
+        updateGamepads = newUpdateGamepads;
+    }
+
     render();
 
     console.log("cool. let's play some video games");

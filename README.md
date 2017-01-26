@@ -37,17 +37,13 @@ There are a few settings you can add to your script tag to alter nfig's behaviou
 
 ### `players`
 
-**Number**
-
-1-8, default: 2
+**Number** from 1 to 8, default: 2
 
 Sets the number of players that will be displayed in the dropdown menu. Set this to your expected number of players.
 
 ### `no-button`
 
 **Flag**
-
-Default: unset
 
 If set, then nfig will not replace the default "Carts" button with its "Remap" button. Note that you will need to provide your players with another way to open the panel. nfig exposes a global `nfig_toggle()` method for you to use in this situation.
 

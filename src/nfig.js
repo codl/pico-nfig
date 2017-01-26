@@ -206,6 +206,8 @@ function nfig(settings){
         panel_el.classList.toggle("shown");
     }
 
+    window.nfig_toggle = toggle;
+
     panel_el.querySelector("#nfig-close").addEventListener("click", toggle);
 
     panel_el.querySelector("#nfig-remapall").addEventListener("click", () => {
@@ -220,9 +222,11 @@ function nfig(settings){
         status_el.innerHTML = "Defaults restored."; // mmm gross
     })
 
-    const config_button = document.querySelectorAll(".pico8_el")[4];
-    config_button.innerHTML = '<img src="icon.png" width="12" height="12"> Remap';
-    config_button.addEventListener("click", toggle);
+    if(typeof settings.noButton == "undefined"){
+        const config_button = document.querySelectorAll(".pico8_el")[4];
+        config_button.innerHTML = '<img src="icon.png" width="12" height="12"> Remap';
+        config_button.addEventListener("click", toggle);
+    }
 
     if(navigator.getGamepads && window.updateGamepads){
 

@@ -10,7 +10,7 @@ A drop-in script that adds keyboard settings to your exported [PICO-8][] game
 
 Edit the HTML file for your game and add this line at the very end:
 
-```javascript
+```html
 <script src="https://cdn.rawgit.com/codl/pico-nfig/v0.0.6/lib/nfig.js"></script>
 ```
 
@@ -20,13 +20,33 @@ If you'd rather not use rawgit (for example, if you want your game to be playabl
 
 Download [nfig.js](lib/nfig.js), put it in the same directory as your game, and add this line to the bottom of your game's HTML file:
 
-```javascript
+```html
 <script src="nfig.js"></script>
 ```
 
 ## Settings
 
-blah blah fill this before release
+There are a few settings you can add to your script tag to alter nfig's behaviour. They can be set by adding a `data-SETTING` attribute to nfig's script tag. For example, the following sets `players` to 4 and sets the `no-button` flag.
+
+```html
+<script data-players="4" data-no-button src="nfig.js"></script>
+```
+
+### `players`
+
+**Number**
+
+Default: 2
+
+Sets the number of players that will be displayed in the dropdown menu. Set this to your expected number of players.
+
+### `no-button`
+
+**Flag**
+
+Default: unset
+
+If set, then nfig will not replace the default "Carts" button with its "Remap" button. Note that you will need to provide your players with another way to open the panel. nfig exposes a global `nfig_toggle()` method for you to use in this situation.
 
 ## Compatibility
 

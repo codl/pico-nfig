@@ -29,14 +29,17 @@ Download [nfig.js](lib/nfig.js), put it in the same directory as your game, and 
 There are a few settings you can add to your script tag to alter nfig's behaviour. They can be set by adding a `data-SETTING` attribute to nfig's script tag. For example, the following sets `players` to 4 and sets the `no-button` flag.
 
 ```html
-<script data-players="4" data-no-button src="nfig.js"></script>
+<script
+    data-players="4"
+    data-no-button
+    src="nfig.js"></script>
 ```
 
 ### `players`
 
 **Number**
 
-Default: 2
+1-8, default: 2
 
 Sets the number of players that will be displayed in the dropdown menu. Set this to your expected number of players.
 

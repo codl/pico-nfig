@@ -137,11 +137,15 @@ function nfig(settings){
     panel_contents += '<svg xmlns="http://www.w3.org/2000/svg" id="nfig-controller" viewBox="0 0 244.0124 148.0124"><g data-nfig-btn="left"><path d="M28.3465 60.3465H55.666V87.666H28.3465V60.3465zm7.327 13.66l10.798 6.782v-13.564l-10.798 6.782z"/><rect x="28" y="60" width="28" height="28" fill-opacity="0"/></g><g data-nfig-btn="right"><path d="M119.666 60.3465H92.3465V87.666h27.3195V60.3465zm-7.327 13.66l-10.798 6.782v-13.564l10.798 6.782z"/><rect x="92" y="60" width="28" height="28" fill-opacity="0"/></g><g data-nfig-btn="up"><path d="M60.3465 28.3465V55.666H87.666V28.3465H60.3465zm13.66 7.327l6.782 10.798h-13.564l6.782-10.798z"/><rect x="60" y="28" width="28" height="28" fill-opacity="0"/></g><g data-nfig-btn="down"><path d="M60.3465 119.666V92.3465H87.666v27.3195H60.3465zm13.66-7.327l6.782-10.798h-13.564l6.782 10.798z"/><rect x="60" y="92" width="28" height="28" fill-opacity="0"/></g><g data-nfig-btn="o"><path d="M142.6867 60.3465V87.666h27.3195V60.3465h-27.3195zm13.6594 6.129c4.1375 0 7.5312 3.393 7.5312 7.5304 0 4.1372-3.3937 7.5303-7.531 7.5303-4.1374 0-7.5305-3.393-7.5305-7.5304 0-4.1375 3.393-7.5305 7.5304-7.5305zm0 3.6666c-2.1556 0-3.8636 1.7082-3.8636 3.864 0 2.1555 1.708 3.8636 3.8637 3.8636 2.1558 0 3.864-1.708 3.864-3.8637 0-2.1558-1.7082-3.864-3.864-3.864z"/><rect x="142" y="60" width="28" height="28" fill-opacity="0"/></g><g data-nfig-btn="x"><path d="M188.3465 60.3465V87.666h27.3195V60.3465h-27.3195zm7.5864 5.431a1.948 1.948 0 0 1 1.3888.6108l4.684 4.8218 4.685-4.8217a1.948 1.948 0 0 1 1.33-.6087 1.948 1.948 0 0 1 1.4636 3.323l-4.763 4.9033 4.763 4.9025a1.948 1.948 0 1 1-2.7937 2.715l-4.6848-4.8225-4.6842 4.8224a1.948 1.948 0 1 1-2.7944-2.715l4.763-4.9025-4.763-4.9035a1.948 1.948 0 0 1 1.4055-3.325z"/><rect x="188" y="60" width="28" height="28" fill-opacity="0"/></g></svg>';
 
     panel_contents += '<div class="nfig-left">';
-    panel_contents += '<select id="nfig-player">';
-    for(let i = 0; i < max_players; i++){
-        panel_contents += '<option value=' + i + (i==0?' selected':'') + '>Player ' + (i+1) + '</option>';
+    if(max_players <= 1){
+        panel_contents += '<input id="nfig-player" type="hidden" value="0"></input>';
+    } else {
+        panel_contents += '<select id="nfig-player">';
+        for(let i = 0; i < max_players; i++){
+            panel_contents += '<option value=' + i + (i==0?' selected':'') + '>Player ' + (i+1) + '</option>';
+        }
+        panel_contents += '</select>';
     }
-    panel_contents += '</select>';
 
     panel_contents += '<p id="nfig-status"></p>';
 

@@ -1,3 +1,8 @@
+## v0.0.7 (2017-01-26)
+
+- add: setting to choose how many players should be shown
+- add: setting to not turn the carts button into an nfig button
+
 ## v0.0.6 (2017-01-22)
 
 - add: compatibility with krajzeg's pico8gamepad script. ([issue #1](https://github.com/codl/pico-nfig/issues/1))

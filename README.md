@@ -24,6 +24,10 @@ Download [nfig.js](lib/nfig.js), put it in the same directory as your game, and 
 <script src="nfig.js"></script>
 ```
 
+## Settings
+
+blah blah fill this before release
+
 ## Compatibility
 
 nfig supports and has been tested against exports from PICO-8 v0.1.10C, in evergreen browsers (Chrome, Firefox, Edge)

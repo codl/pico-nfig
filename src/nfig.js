@@ -199,9 +199,11 @@ function nfig(settings){
     player_el.addEventListener("change", cancel);
 
     function toggle(e){
-        e.preventDefault();
-        // prevent focus from staying on the "Done" button
-        e.target.blur();
+        if(e){
+            e.preventDefault();
+            // prevent focus from staying on the "Done" button
+            e.target.blur();
+        }
         cancel();
         panel_el.classList.toggle("shown");
     }

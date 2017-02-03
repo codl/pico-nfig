@@ -238,10 +238,7 @@ function nfig(settings){
         let cancel_el = panel_el.querySelector("#nfig-cancel");
         let status = "Click any button to remap it."
         if(is_mapping){
-            status = "Press a key to map it to " + is_mapping;
-            if(mapping_all){
-                status = "Mapping all keys for player " + (player+1) + "... " + status;
-            }
+            status = "Press a key or a gamepad button for " + is_mapping;
         }
         for(let button of svg_buttons){
             // switch this back when firefox 51 comes out

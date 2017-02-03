@@ -138,6 +138,7 @@ function nfig(settings){
                 } else {
                     pico8_buttons[player] &= ~bitmap[button];
                 }
+                render();
             } else if(!no_generics) {
                 let generic_key = `pad_generic:${pad_index%max_players}:${control_type}:${control_index % 2}:${direction}`
                 on_generic_pad(generic_key, is_pressed);

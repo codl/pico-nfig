@@ -1,6 +1,6 @@
 # nfig
 
-A drop-in script that adds keyboard settings to your exported [PICO-8][] game
+A drop-in script that adds gamepad and keyboard settings to your exported [PICO-8][] game
 
 ![](screenshot.png)
 

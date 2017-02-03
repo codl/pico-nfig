@@ -19,7 +19,8 @@ function nfig(settings){
         "up": 4,
         "down": 8,
         "o": 16,
-        "x": 32
+        "x": 32,
+        "pause": 64
     }
     const default_bindings = {
      "arrowup": [0, "up"],
@@ -53,6 +54,13 @@ function nfig(settings){
         default_bindings[`pad_generic:${i}:axis:0:+`] = [i, "right"];
         default_bindings[`pad_generic:${i}:axis:1:-`] = [i, "up"];
         default_bindings[`pad_generic:${i}:axis:1:+`] = [i, "down"];
+
+        default_bindings[`pad_standard:${i}:button:12:+`] = [i, "up"];
+        default_bindings[`pad_standard:${i}:button:13:+`] = [i, "down"];
+        default_bindings[`pad_standard:${i}:button:14:+`] = [i, "left"];
+        default_bindings[`pad_standard:${i}:button:15:+`] = [i, "right"];
+
+        default_bindings[`pad_standard:${i}:button:9:+`] = [i, "pause"];
     }
     window.default_bindings = default_bindings;
     let bindings = Object.assign({}, default_bindings);
@@ -77,6 +85,7 @@ function nfig(settings){
     }
 
     function key(e){
+        console.log(e);
         if(e.key == "Enter" || e.key.toLowerCase() == "p"){
             return SDL.receiveEvent.call(this, e);
         }
@@ -125,28 +134,40 @@ function nfig(settings){
         render();
     }
 
-    function on_pad(key, pad_index, control_type, control_index, direction, is_pressed, no_generics){
+    function on_pad(key, pad, control_type, control_index, direction, is_pressed, no_generics){
+        console.log(key, is_pressed);
         if(is_mapping && is_pressed){
             add_mapping(key);
         } else {
             let binding = bindings[key];
             if(binding){
                 let [player, button] = binding;
+                if(button == "pause"){
+                    player = 0;
+                }
                 if(is_pressed){
                     pico8_buttons[player] |= bitmap[button];
                 } else {
                     pico8_buttons[player] &= ~bitmap[button];
                 }
                 render();
+                return true;
             } else if(!no_generics) {
-                let generic_key = `pad_generic:${pad_index%max_players}:${control_type}:${control_index % 2}:${direction}`
-                on_generic_pad(generic_key, is_pressed);
+                let success = false;
+                if(pad.mapping){
+                    let mapping_key = key.replace(/^pad:/, `pad_${pad.mapping}:`);
+                    success = on_generic_pad(mapping_key, is_pressed);
+                }
+                if(!success){
+                    let generic_key = `pad_generic:${pad.index%max_players}:${control_type}:${control_index % 2}:${direction}`
+                    on_generic_pad(generic_key, is_pressed);
+                }
             }
         }
     }
 
     function on_generic_pad(key, is_pressed){
-        on_pad(key, null, null, null, null, is_pressed, true);
+        return on_pad(key, null, null, null, null, is_pressed, true);
     }
 
     const css = document.createElement("link");
@@ -291,14 +312,14 @@ function nfig(settings){
                 pad_status[pluskey] = gamepad.axes[i] > AXIS_DEADZONE;
 
                 if(pad_status_prev[pluskey] != pad_status[pluskey]){
-                    on_pad(pluskey, gamepad.index, "axis", i, "+", pad_status[pluskey])
+                    on_pad(pluskey, gamepad, "axis", i, "+", pad_status[pluskey])
                 }
 
                 let minuskey = key + ":-";
                 pad_status[minuskey] = gamepad.axes[i] < -AXIS_DEADZONE;
 
                 if(pad_status_prev[minuskey] != pad_status[minuskey]){
-                    on_pad(minuskey, gamepad.index, "axis", i, "-", pad_status[minuskey])
+                    on_pad(minuskey, gamepad, "axis", i, "-", pad_status[minuskey])
                 }
             }
             for(let i = 0; i < gamepad.buttons.length; i++){
@@ -306,7 +327,7 @@ function nfig(settings){
                 pad_status[key] = gamepad.buttons[i].pressed;
 
                 if(pad_status_prev[key] != pad_status[key]){
-                    on_pad(key, gamepad.index, "button", i, "+", pad_status[key])
+                    on_pad(key, gamepad, "button", i, "+", pad_status[key])
                 }
             }
         }

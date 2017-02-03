@@ -1,3 +1,8 @@
+## v1.0.0 (2017-02-03)
+
+- add: gamepad support
+- removed: compat with krajzeg's thing
+
 ## v0.0.7 (2017-01-26)
 
 - add: setting to choose how many players should be shown

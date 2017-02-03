@@ -67,7 +67,7 @@ function nfig(settings){
     const AXIS_DEADZONE = .4;
 
 
-    let max_players = settings.players-0 || 2;
+    let max_players = Math.floor(settings.players-0 || 2);
 
     if(!(max_players <= 8 && max_players >= 1)){
         console.error("nfig: data-players is not between 1 and 8! resetting to 2")

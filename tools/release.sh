@@ -10,6 +10,8 @@ cd $(git rev-parse --show-toplevel)
 VERSION=$1
 PREVIOUS=$(git describe --tags --abbrev=0)
 
+export NFIG_VERSION=$VERSION
+
 (
 echo "## $VERSION ($(date -I))"
 echo

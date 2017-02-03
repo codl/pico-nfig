@@ -1,3 +1,8 @@
+## v1.0.1 (2017-02-03)
+
+- fix: storage versioning
+- fix: some UI copy
+
 ## v1.0.0 (2017-02-03)
 
 - add: gamepad support

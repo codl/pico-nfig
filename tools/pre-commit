@@ -1,1 +1,8 @@
-./pack.sh && git add lib
+#!/bin/bash
+
+if [[ $VERSION == "" ]]; then
+    VERSION=$(git describe --tags --abbrev=0)
+fi
+
+sed "s/{{VERSION}}/$VERSION/" < tools/README.tmpl.md > README.md && git add README.md || exit 1
+./pack.sh && git add lib || exit 1

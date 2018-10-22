@@ -11,7 +11,7 @@ A drop-in script that adds gamepad and keyboard settings to your exported [PICO-
 Edit the HTML file for your game and add this line at the very end:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/codl/pico-nfig@v1.0.1/lib/nfig.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/codl/pico-nfig@1.0.1/lib/nfig.js" integrity="sha256-g5hO7r4Wj0Z51eaV73ATXK3yLGl7hqB30UN986DuCO0=" crossorigin="anonymous"></script>
 ```
 
 ## How do I use this without jsDelivr?

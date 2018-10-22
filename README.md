@@ -11,12 +11,12 @@ A drop-in script that adds gamepad and keyboard settings to your exported [PICO-
 Edit the HTML file for your game and add this line at the very end:
 
 ```html
-<script src="https://cdn.rawgit.com/codl/pico-nfig/v1.0.1/lib/nfig.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/codl/pico-nfig@v1.0.1/lib/nfig.js"></script>
 ```
 
-## How do I use this without rawgit?
+## How do I use this without jsDelivr?
 
-If you'd rather not use rawgit (for example, if you want your game to be playable offline) you can host nfig alongside your game.
+If you'd rather not use a CDN (for example, if you want your game to be playable offline) you can host nfig alongside your game.
 
 Download [nfig.js](lib/nfig.js), put it in the same directory as your game, and add this line to the bottom of your game's HTML file:
 
